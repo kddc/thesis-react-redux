@@ -10,7 +10,7 @@ export function answersLoad(questionId, answerIds) {
           answers,
         })
       },
-      payload: (db) => db.Answer.find().in('id', answerIds).limit(1).resultList()
+      payload: (db) => db.Answer.find().ascending('createdAt').in('id', answerIds).limit(1).resultList()
     }
   }
 }

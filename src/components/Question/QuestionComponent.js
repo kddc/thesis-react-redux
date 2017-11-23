@@ -5,7 +5,7 @@ import '../../styles/Question.css'
 class QuestionComponent extends Component {
   render() {
     // <Link to={`/question/${question.id}`}>{question.text}</Link>
-    const { question, answers } = this.props
+    const { question, author, answers } = this.props
     return (
       <div>
         <div className="question">
@@ -15,7 +15,7 @@ class QuestionComponent extends Component {
           <div className="content">
             {question.text}
             <div className="info">
-              Author: {(question.author && question.author.username) || 'Anonymous'} | {(question.answers && question.answers.total) || 0} Answers
+              Author: {(author && author.username) || 'Anonymous'} | {(question.answers && question.answers.total) || 0} Answers
             </div>
           </div>
         </div>
